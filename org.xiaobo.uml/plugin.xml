@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="com.uxteam.reload.databasecreator"
+   name="Databasecreator Plug-in"
+   version="1.0.0"
+   provider-name=""
+   class="com.uxteam.reload.databasecreator.DatabaseCreatorPlugin">
+
+   <runtime>
+      <library name="databasecreator.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.draw2d"/>
+      <import plugin="org.eclipse.gef"/>
+      <import plugin="org.eclipse.ui.views"/>
+   </requires>
+  
+   <extension
+         id="dbeditor"
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.uxteam.reload.databasecreator.ui.DbEditor"
+            icon="icons/sample.gif"
+            default="false"
+            name="DBEditor"
+            id="com.uxteam.reload.databasecreator.editor"
+            extensions="dbtest"/>
+   </extension>
+
+</plugin>
